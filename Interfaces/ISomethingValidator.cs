@@ -7,6 +7,6 @@ namespace Polymorphism_Example.Interfaces
 {
     public interface ISomethingValidator
     {
-        ValidationModel ValidateSomething();
+        ValidationModel ValidateSomething(List<string> listToValidate);
     }
 }

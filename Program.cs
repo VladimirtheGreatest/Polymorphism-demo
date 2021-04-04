@@ -14,14 +14,14 @@ namespace Polymorphism_Example
         {
             var services = new List<ISomethingValidator>
             {
-                new FirstService(_databaseSampleInjection),
-                new SecondService(_databaseSampleInjection),
-                new ThirdService(_databaseSampleInjection),
+                new FirstService(),
+                new SecondService(),
+                new ThirdService(),
             };
 
             foreach (var service in services)
             {
-                var serviceValidatedSomething = service.ValidateSomething();
+                var serviceValidatedSomething = service.ValidateSomething(_databaseSampleInjection.GetData());
                 if (serviceValidatedSomething.IsValidated)
                 {
                     Console.WriteLine(serviceValidatedSomething.ValidationMessage);
